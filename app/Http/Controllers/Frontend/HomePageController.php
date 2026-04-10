@@ -3,13 +3,17 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Blog;
+use App\Models\ContactMessage;
 use Illuminate\Http\Request;
 
 class HomePageController extends Controller
 {
   public function index()
   {
-    return view('frontend.index');
+    $blogs =Blog::orderBy('created_at','desc')->paginate(5);
+ 
+    return view('frontend.index',compact('blogs'));
   }
 
   public function aboutMe()
@@ -21,10 +25,27 @@ class HomePageController extends Controller
    {
     return view('frontend.contact-me');
    }
+    public function storeContactmessage(Request $request)
+    {
+       $message = new ContactMessage();
+       $message->name = $request->name;
+       $message->emai = $request->email;
+       $message->phone = $request->phone;
+       $message->message = $request->message;
+         
+        //  $message->save();
+        toastr()->success('message is send successfully.');
+        return redirect()->back();
 
-  public function blogDetails()
+
+    }
+   
+
+  public function blogDetails($id)
   {
-    return view('frontend.blog-details');
+    $blog =Blog::find($id);
+   
+    return view('frontend.blog-details',compact('blog'));
   }
 
 

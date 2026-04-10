@@ -6,8 +6,8 @@
           <a href="./index.html" class="brand-link">
             <!--begin::Brand Image-->
             <img
-              src="./assets/img/AdminLTELogo.png"
-              alt="AdminLTE Logo"
+              src="#"
+              alt=""
               class="brand-image opacity-75 shadow"
             />
             <!--end::Brand Image-->
@@ -30,7 +30,7 @@
               data-accordion="false"
               id="navigation"
             >
-              <li class="nav-item menu-open">
+              <li class="nav-item">
                 <a href="#" class="nav-link active">
                   <i class="nav-icon bi bi-speedometer"></i>
                   <p>
@@ -40,7 +40,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="#" class="nav-link active">
+                    <a href="{{url('/admin/list-blog')}}" class="nav-link active">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>List</p>
                     </a>
@@ -54,6 +54,21 @@
                  
                 </ul>
               </li>
+              
+              <li class="nav-item">
+              <a href="{{url('/admin/contact-messages')}}" class="nav-link">
+              <i class="nav-icon bi bi-palette "></i>
+              <p>contact Messages</p>
+              </a>
+              </li>
+
+               <li class="nav-item">
+              <a href="{{url('/admin/settings')}}" class="nav-link">
+              <i class="nav-icon bi bi-palette "></i>
+              <p>settings</p>
+              </a>
+              </li>
+
               <li class="nav-item">
               <a href="{{url('/admin/logout')}}" class="nav-link">
               <i class="nav-icon bi bi-palette "></i>

@@ -12,7 +12,7 @@
                   </div>
                   <!--end::Header-->
                   <!--begin::Form-->
-                  <form action="{{url('/admin-store-blog')}}" method="post" enctype="multipart/form-data">
+                  <form action="{{url('/admin/store-blog')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <!--begin::Body-->
                     <div class="card-body">
